@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="512" height="512"
+     viewBox="0 0 512 512"
+     fill="currentColor"
+     stroke="currentColor"
+     stroke-linejoin="round"
+     stroke-width="16">
+  <!-- bat -->
+  <path d="M256 176 L282 112 L300 188 Q384 124 500 132 Q444 200 444 316 Q404 268 360 300 Q324 312 314 376 Q282 356 256 420 Q230 356 198 376 Q188 312 152 300 Q108 268 68 316 Q68 200 12 132 Q128 124 212 188 L230 112 Z"/>
+</svg>

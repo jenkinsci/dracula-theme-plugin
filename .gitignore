@@ -1,0 +1,36 @@
+target
+
+# mvn hpi:run
+work
+
+# IntelliJ IDEA project files
+*.iml
+*.iws
+*.ipr
+.idea/*
+!.idea/icon.svg
+
+# Eclipse project files
+.settings
+.classpath
+.project
+
+# macOS
+.DS_Store
+
+# Screenshots, reports and builds from local test and audit runs.
+# Only the README images in docs/images are tracked.
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+!docs/images/*
+*.log
+*.hpi
+*.jpi
+test-results/
+playwright-report/
+
+# Playwright MCP session logs
+.playwright-mcp/
