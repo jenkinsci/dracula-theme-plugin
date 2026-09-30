@@ -84,12 +84,6 @@ appearance:
     theme: "dracula"
 ```
 
-## Known limitations
-
-- **Blue Ocean** is not styled. Theme Manager does not add theme stylesheets to Blue Ocean pages, so this is the same for every Jenkins theme.
-- **Charts that the server renders as PNG images** keep their white background. This includes the Build Time Trend and Load Statistics graphs in Jenkins core and the test trend portlet of Dashboard View.
-- **HTML Publisher reports** open in the plugin's own report frame, which does not load Jenkins styles.
-
 ## Palette
 
 | Color        | Hex       | Swatch                                                                         | Used for                                  |
@@ -125,11 +119,6 @@ The theme is scoped to `[data-theme=dracula]`, so it has no effect when a user s
 
 Bug reports and pull requests are welcome. If a page or a plugin looks wrong with the theme, open an issue with a screenshot and the plugin name and version.
 See the [Jenkins contribution guidelines](https://github.com/jenkinsci/.github/blob/master/CONTRIBUTING.md) for general rules.
-
-## Credits
-
-- The [Dracula Theme](https://draculatheme.com) and its palette were created by [Zeno Rocha](https://github.com/zenorocha) and the Dracula contributors.
-- The plugin structure follows the [Nord](https://github.com/jenkinsci/nord-theme-plugin) and [Catppuccin](https://github.com/jenkinsci/catppuccin-theme-plugin) theme plugins for Jenkins.
 
 ## License
 
