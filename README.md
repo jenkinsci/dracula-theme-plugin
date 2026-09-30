@@ -53,6 +53,7 @@ A dark theme for Jenkins, built on the official [Dracula](https://draculatheme.c
 ## Installation
 
 The plugin needs Jenkins 2.528.3 or newer. The [Theme Manager](https://plugins.jenkins.io/theme-manager/) plugin is installed with it as a dependency.
+The theme was checked page by page on Jenkins 2.568.3 and 2.580.1 in Chrome.
 
 **From the Update Center** (after the plugin is published):
 
@@ -83,12 +84,18 @@ appearance:
     theme: "dracula"
 ```
 
+## Known limitations
+
+- **Blue Ocean** is not styled. Theme Manager does not add theme stylesheets to Blue Ocean pages, so this is the same for every Jenkins theme.
+- **Charts that the server renders as PNG images** keep their white background. This includes the Build Time Trend and Load Statistics graphs in Jenkins core and the test trend portlet of Dashboard View.
+- **HTML Publisher reports** open in the plugin's own report frame, which does not load Jenkins styles.
+
 ## Palette
 
 | Color        | Hex       | Swatch                                                                         | Used for                                  |
 | ------------ | --------- | ------------------------------------------------------------------------------ | ----------------------------------------- |
 | Background   | `#282a36` | ![#282a36](https://img.shields.io/badge/%20-282a36?style=flat-square)          | Page background                           |
-| Current Line | `#44475a` | ![#44475a](https://img.shields.io/badge/%20-44475a?style=flat-square)          | Selection, borders                        |
+| Selection    | `#44475a` | ![#44475a](https://img.shields.io/badge/%20-44475a?style=flat-square)          | Selection, borders                        |
 | Foreground   | `#f8f8f2` | ![#f8f8f2](https://img.shields.io/badge/%20-f8f8f2?style=flat-square)          | Text                                      |
 | Comment      | `#6272a4` | ![#6272a4](https://img.shields.io/badge/%20-6272a4?style=flat-square)          | Secondary text, comments in code          |
 | Cyan         | `#8be9fd` | ![#8be9fd](https://img.shields.io/badge/%20-8be9fd?style=flat-square)          | Information                               |
