@@ -7,6 +7,8 @@ A dark theme for Jenkins, built on the official [Dracula](https://draculatheme.c
 [![License: MIT](https://img.shields.io/badge/license-MIT-bd93f9?style=flat-square&labelColor=282a36)](LICENSE)
 [![Jenkins 2.541.3+](https://img.shields.io/badge/Jenkins-2.541.3%2B-bd93f9?style=flat-square&logo=jenkins&logoColor=f8f8f2&labelColor=282a36)](https://www.jenkins.io/changelog-stable/)
 [![Theme Manager](https://img.shields.io/badge/Theme%20Manager-plugin-ff79c6?style=flat-square&labelColor=282a36)](https://plugins.jenkins.io/theme-manager/)
+[![Security scan](https://img.shields.io/github/actions/workflow/status/epogonii/dracula-theme-plugin/jenkins-security-scan.yml?label=security%20scan&style=flat-square&labelColor=282a36)](https://github.com/epogonii/dracula-theme-plugin/actions/workflows/jenkins-security-scan.yml)
+[![Dracula palette](https://img.shields.io/badge/palette-Dracula-8be9fd?style=flat-square&labelColor=282a36)](https://draculatheme.com/spec)
 
 ![Jenkins dashboard with the Dracula theme](docs/images/dashboard.png)
 
