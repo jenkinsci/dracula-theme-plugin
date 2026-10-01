@@ -1218,6 +1218,12 @@
     background-color: var(--dracula-ansi-bright-cyan) !important;
   }
 
+  /* Build Failure Analyzer marks matched console lines with white on red inline styles */
+  span[style^="color:white;background:red" i] {
+    color: var(--dracula-foreground) !important;
+    background: oklch(from var(--dracula-red) l c h / 0.25) !important;
+  }
+
   /* Render native browser elements in dark mode */
   color-scheme: dark;
 }
