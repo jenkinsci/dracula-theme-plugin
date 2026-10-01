@@ -1234,3 +1234,28 @@
   border-color: var(--jenkins-border-color);
   border-style: solid;
 }
+
+/* Some plugins (Jira Software Cloud regex testers) still render legacy YUI buttons as a bare <button>,
+   which Chrome draws as its grey native control; zero specificity so core and plugin styles still win */
+:where([data-theme=dracula] .yui-button > button) {
+  appearance: none;
+  min-height: 2.375rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--jenkins-border-color);
+  border-radius: 0.625rem;
+  background: var(--button-background);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+:where([data-theme=dracula] .yui-button > button:hover) {
+  background: var(--button-background--hover);
+}
+:where([data-theme=dracula] .yui-button > button:active) {
+  background: var(--button-background--active);
+}
+:where([data-theme=dracula] .yui-button > button:focus-visible) {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem var(--button-box-shadow--focus);
+}
