@@ -17,17 +17,9 @@ A dark theme for Jenkins, built on the official [Dracula](https://draculatheme.c
 ## Features
 
 - **The whole Jenkins UI in Dracula colors.** Pages, side panels, cards, tables, forms, buttons, tooltips, dropdowns and dialogs use the [Dracula Classic spec](https://draculatheme.com/spec).
-- **Status colors from the palette.** Successful, failed and unstable builds use Dracula green, red and orange. Status icons, Stage View cells and progress bars use the same colors.
-- **Console output in terminal colors.** ANSI colors from the [AnsiColor](https://plugins.jenkins.io/ansicolor/) plugin use the Dracula terminal palette, bright colors included.
-- **Code editors with Dracula syntax colors:**
-  - the ACE Pipeline editor (job configuration, Replay) and its autocomplete popup
-  - CodeMirror in the Script Console and other Groovy fields
-  - Prism code views in JUnit test results, Coverage and Warnings NG source views
-- **Popular plugins that ship their own light styles**, restyled:
-  - [Pipeline: Stage View](https://plugins.jenkins.io/pipeline-stage-view/)
-  - [Warnings Next Generation](https://plugins.jenkins.io/warnings-ng/), [Coverage](https://plugins.jenkins.io/coverage/) and other Bootstrap 5 and DataTables pages
-  - [Allure](https://plugins.jenkins.io/allure-jenkins-plugin/) warnings
-- **Plugins that use Jenkins design tokens**, such as [Pipeline Graph View](https://plugins.jenkins.io/pipeline-graph-view/), get the palette with no extra CSS.
+- **Status colors from the palette.** Successful, failed and unstable builds use Dracula green, red and orange.
+- **Built on Jenkins design tokens.** The theme sets only the Jenkins design tokens, so everything that uses them gets the palette with no extra CSS: [Pipeline Graph View](https://plugins.jenkins.io/pipeline-graph-view/), the Pipeline editor, the Script Console, Prism code views such as JUnit stack traces, and more.
+- **Dark Bootstrap pages.** Bootstrap 5 pages, such as [Warnings Next Generation](https://plugins.jenkins.io/warnings-ng/) and [Coverage](https://plugins.jenkins.io/coverage/), switch to the dark Bootstrap color mode.
 - **Native browser controls in dark mode.** Scrollbars, checkboxes and select menus are dark too.
 - **No stale styles after upgrades.** The stylesheet URL has a content hash, so browsers load the new CSS after a plugin update.
 
@@ -35,19 +27,19 @@ A dark theme for Jenkins, built on the official [Dracula](https://draculatheme.c
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/images/stage-view.png" alt="Pipeline Stage View"><p align="center"><b>Pipeline Stage View</b></p></td>
     <td width="50%"><img src="docs/images/pipeline-graph.png" alt="Pipeline Graph View with a failed stage"><p align="center"><b>Pipeline Graph View</b></p></td>
+    <td width="50%"><img src="docs/images/console.png" alt="Console output of a Pipeline build"><p align="center"><b>Console output</b></p></td>
   </tr>
   <tr>
-    <td><img src="docs/images/console.png" alt="Console output with ANSI colors"><p align="center"><b>Console output with ANSI colors</b></p></td>
     <td><img src="docs/images/test-result.png" alt="JUnit test result with a stack trace"><p align="center"><b>JUnit test result</b></p></td>
-  </tr>
-  <tr>
-    <td><img src="docs/images/pipeline-editor.png" alt="Pipeline script editor"><p align="center"><b>Pipeline editor (ACE)</b></p></td>
-    <td><img src="docs/images/script-console.png" alt="Script Console"><p align="center"><b>Script Console (CodeMirror)</b></p></td>
-  </tr>
-  <tr>
     <td><img src="docs/images/warnings-ng.png" alt="Warnings Next Generation report"><p align="center"><b>Warnings Next Generation</b></p></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/pipeline-editor.png" alt="Pipeline script editor"><p align="center"><b>Pipeline editor</b></p></td>
+    <td><img src="docs/images/script-console.png" alt="Script Console"><p align="center"><b>Script Console</b></p></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/plugins.png" alt="Installed plugins in the Plugin Manager"><p align="center"><b>Plugin Manager</b></p></td>
     <td><img src="docs/images/appearance.png" alt="Theme selection on the Appearance page"><p align="center"><b>Appearance settings</b></p></td>
   </tr>
 </table>
@@ -55,7 +47,7 @@ A dark theme for Jenkins, built on the official [Dracula](https://draculatheme.c
 ## Installation
 
 The plugin needs Jenkins 2.541.3 or newer. The [Theme Manager](https://plugins.jenkins.io/theme-manager/) plugin is installed with it as a dependency.
-The theme was checked page by page on Jenkins 2.568.3 and 2.580.1 in Chrome.
+The theme was checked page by page on Jenkins 2.580.1 in Chrome.
 
 **From the Update Center** (after the plugin is published):
 
@@ -88,19 +80,21 @@ appearance:
 
 ## Palette
 
-| Color        | Hex       | Swatch                                                                         | Used for                                  |
+The theme sets these Jenkins design tokens to the Dracula colors:
+
+| Color        | Hex       | Swatch                                                                         | Jenkins tokens                            |
 | ------------ | --------- | ------------------------------------------------------------------------------ | ----------------------------------------- |
-| Background   | `#282a36` | ![#282a36](https://img.shields.io/badge/%20-282a36?style=flat-square)          | Page background                           |
-| Selection    | `#44475a` | ![#44475a](https://img.shields.io/badge/%20-44475a?style=flat-square)          | Selection, borders                        |
-| Foreground   | `#f8f8f2` | ![#f8f8f2](https://img.shields.io/badge/%20-f8f8f2?style=flat-square)          | Text                                      |
-| Comment      | `#6272a4` | ![#6272a4](https://img.shields.io/badge/%20-6272a4?style=flat-square)          | Secondary text, comments in code          |
-| Cyan         | `#8be9fd` | ![#8be9fd](https://img.shields.io/badge/%20-8be9fd?style=flat-square)          | Information                               |
-| Green        | `#50fa7b` | ![#50fa7b](https://img.shields.io/badge/%20-50fa7b?style=flat-square)          | Success                                   |
-| Orange       | `#ffb86c` | ![#ffb86c](https://img.shields.io/badge/%20-ffb86c?style=flat-square)          | Unstable builds, warnings                 |
-| Pink         | `#ff79c6` | ![#ff79c6](https://img.shields.io/badge/%20-ff79c6?style=flat-square)          | Keywords in code                          |
-| Purple       | `#bd93f9` | ![#bd93f9](https://img.shields.io/badge/%20-bd93f9?style=flat-square)          | Accent, links, primary buttons            |
-| Red          | `#ff5555` | ![#ff5555](https://img.shields.io/badge/%20-ff5555?style=flat-square)          | Failure, errors                           |
-| Yellow       | `#f1fa8c` | ![#f1fa8c](https://img.shields.io/badge/%20-f1fa8c?style=flat-square)          | Strings in code                           |
+| Background   | `#282a36` | ![#282a36](https://img.shields.io/badge/%20-282a36?style=flat-square)          | `--background`                            |
+| Selection    | `#44475a` | ![#44475a](https://img.shields.io/badge/%20-44475a?style=flat-square)          | `--selection-color`, border tokens        |
+| Foreground   | `#f8f8f2` | ![#f8f8f2](https://img.shields.io/badge/%20-f8f8f2?style=flat-square)          | `--text-color`                            |
+| Comment      | `#6272a4` | ![#6272a4](https://img.shields.io/badge/%20-6272a4?style=flat-square)          | `--text-color-secondary`, `--indigo`      |
+| Cyan         | `#8be9fd` | ![#8be9fd](https://img.shields.io/badge/%20-8be9fd?style=flat-square)          | `--cyan`, `--teal`                        |
+| Green        | `#50fa7b` | ![#50fa7b](https://img.shields.io/badge/%20-50fa7b?style=flat-square)          | `--green`                                 |
+| Orange       | `#ffb86c` | ![#ffb86c](https://img.shields.io/badge/%20-ffb86c?style=flat-square)          | `--orange`, `--brown`                     |
+| Pink         | `#ff79c6` | ![#ff79c6](https://img.shields.io/badge/%20-ff79c6?style=flat-square)          | `--pink`                                  |
+| Purple       | `#bd93f9` | ![#bd93f9](https://img.shields.io/badge/%20-bd93f9?style=flat-square)          | `--accent-color`, `--blue`, `--purple`    |
+| Red          | `#ff5555` | ![#ff5555](https://img.shields.io/badge/%20-ff5555?style=flat-square)          | `--red`                                   |
+| Yellow       | `#f1fa8c` | ![#f1fa8c](https://img.shields.io/badge/%20-f1fa8c?style=flat-square)          | `--yellow`                                |
 
 ## Development
 
@@ -119,7 +113,8 @@ The theme is scoped to `[data-theme=dracula]`, so it has no effect when a user s
 
 ## Contributing
 
-Bug reports and pull requests are welcome. If a page or a plugin looks wrong with the theme, open an issue with a screenshot and the plugin name and version.
+Bug reports and pull requests are welcome. If a Jenkins page looks wrong with the theme, open an issue with a screenshot and the Jenkins version.
+The theme sets only the Jenkins design tokens. If a plugin page does not follow the theme, the plugin most likely uses its own colors, so please report it to that plugin.
 See the [Jenkins contribution guidelines](https://github.com/jenkinsci/.github/blob/master/CONTRIBUTING.md) for general rules.
 
 ## License
