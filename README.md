@@ -4,6 +4,9 @@
 
 A dark theme for Jenkins, built on the official [Dracula](https://draculatheme.com) color palette.
 
+[![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/dracula-theme?label=version&style=flat-square&color=bd93f9&labelColor=282a36)](https://plugins.jenkins.io/dracula-theme/)
+[![Build](https://ci.jenkins.io/buildStatus/icon?job=Plugins%2Fdracula-theme-plugin%2Fmain&style=flat-square&subject=build)](https://ci.jenkins.io/job/Plugins/job/dracula-theme-plugin/job/main/)
+[![Changelog](https://img.shields.io/github/v/release/jenkinsci/dracula-theme-plugin?label=changelog&style=flat-square&color=ff79c6&labelColor=282a36)](https://github.com/jenkinsci/dracula-theme-plugin/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-bd93f9?style=flat-square&labelColor=282a36)](LICENSE)
 [![Jenkins 2.541.3+](https://img.shields.io/badge/Jenkins-2.541.3%2B-bd93f9?style=flat-square&logo=jenkins&logoColor=f8f8f2&labelColor=282a36)](https://www.jenkins.io/changelog-stable/)
 [![Theme Manager](https://img.shields.io/badge/Theme%20Manager-plugin-ff79c6?style=flat-square&labelColor=282a36)](https://plugins.jenkins.io/theme-manager/)
@@ -49,7 +52,7 @@ A dark theme for Jenkins, built on the official [Dracula](https://draculatheme.c
 The plugin needs Jenkins 2.541.3 or newer. The [Theme Manager](https://plugins.jenkins.io/theme-manager/) plugin is installed with it as a dependency.
 The theme was checked page by page on Jenkins 2.580.1 in Chrome.
 
-**From the Update Center** (after the plugin is published):
+**From the Update Center:**
 
 1. Go to **Manage Jenkins » Plugins » Available plugins**.
 2. Search for **Dracula Theme**, select it and click **Install**.
