@@ -31,8 +31,7 @@ public class DraculaTheme extends ThemeManagerFactory {
     public Theme getTheme() {
         return Theme.builder()
                 .withCssUrls(List.of(getCssUrl() + "?v=" + cssVersion()))
-                // Plugins with their own light styles read these to load a dark variant, dracula.css recolors it
-                .withProperty("prism-api", "theme", "tomorrow")
+                // Bootstrap 5 pages read this to switch to the dark color mode
                 .withProperty("bootstrap", "theme", "dark")
                 .build();
     }
