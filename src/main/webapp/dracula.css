@@ -1061,7 +1061,8 @@
   }
 
   /* Monitor counters in the header of older cores */
-  .am-monitor__count {
+  .am-monitor__count,
+  .am-button.security-am .am-monitor__count {
     color: var(--dracula-background);
   }
 
