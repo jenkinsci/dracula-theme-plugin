@@ -1259,3 +1259,8 @@
   outline: none;
   box-shadow: 0 0 0 0.2rem var(--button-box-shadow--focus);
 }
+
+/* script-security flags dangerous approved signatures on Manage Jenkins with <font color=red> */
+:where([data-theme=dracula] font[color="red" i]) {
+  color: var(--dracula-red);
+}
