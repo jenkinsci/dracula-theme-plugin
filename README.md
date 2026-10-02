@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧛‍♂️ Dracula Theme for Jenkins
+# 🧛🏻‍♂️ Dracula Theme for Jenkins
 
 A dark theme for Jenkins, built on the official [Dracula](https://draculatheme.com) color palette.
 
