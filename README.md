@@ -8,7 +8,7 @@ Dark and light themes for Jenkins, built on the official [Dracula](https://dracu
 [![Build](https://ci.jenkins.io/buildStatus/icon?job=Plugins%2Fdracula-theme-plugin%2Fmain&style=flat-square&subject=build)](https://ci.jenkins.io/job/Plugins/job/dracula-theme-plugin/job/main/)
 [![Jenkins 2.541.3+](https://img.shields.io/badge/Jenkins-2.541.3%2B-bd93f9?style=flat-square&logo=jenkins&logoColor=f8f8f2&labelColor=282a36)](https://www.jenkins.io/changelog-stable/)
 
-![Jenkins dashboard with the Dracula theme](docs/images/dashboard.png)
+![Jenkins dashboard in Dracula and Dracula (Alucard)](docs/images/dashboard-dark-light.png)
 
 </div>
 
@@ -49,12 +49,20 @@ Dark and light themes for Jenkins, built on the official [Dracula](https://dracu
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/images/dashboard-light.png" alt="Jenkins dashboard with the Dracula (Alucard) theme"><p align="center"><b>Dashboard</b></p></td>
     <td width="50%"><img src="docs/images/pipeline-graph-light.png" alt="Pipeline Graph View with a failed stage in the light theme"><p align="center"><b>Pipeline Graph View</b></p></td>
+    <td width="50%"><img src="docs/images/console-light.png" alt="Console output of a Pipeline build in the light theme"><p align="center"><b>Console output</b></p></td>
   </tr>
   <tr>
     <td><img src="docs/images/test-result-light.png" alt="JUnit test result with a stack trace in the light theme"><p align="center"><b>JUnit test result</b></p></td>
     <td><img src="docs/images/warnings-ng-light.png" alt="Warnings Next Generation report in the light theme"><p align="center"><b>Warnings Next Generation</b></p></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/pipeline-editor-light.png" alt="Pipeline script editor in the light theme"><p align="center"><b>Pipeline editor</b></p></td>
+    <td><img src="docs/images/script-console-light.png" alt="Script Console in the light theme"><p align="center"><b>Script Console</b></p></td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/plugins-light.png" alt="Installed plugins in the Plugin Manager in the light theme"><p align="center"><b>Plugin Manager</b></p></td>
+    <td><img src="docs/images/appearance-light.png" alt="Theme selection on the Appearance page in the light theme"><p align="center"><b>Appearance settings</b></p></td>
   </tr>
 </table>
 
