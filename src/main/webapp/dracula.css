@@ -195,6 +195,11 @@
   /* Plugin manager */
   --plugin-manager-bg-color-already-upgraded: var(--dracula-surface);
 
+  /* Legacy greys, still used by Dashboard View, Data Tables, Font Awesome and older pages */
+  --very-light-grey: var(--dracula-surface);
+  --light-grey: var(--dracula-surface);
+  --medium-grey: var(--dracula-selection);
+
   /* Default button */
   --button-background: oklch(from var(--text-color-secondary) l c h / 0.075);
   --button-background--hover: oklch(
