@@ -25,7 +25,7 @@ public class DraculaRootAction implements UnprotectedRootAction {
 
     @Override
     public String getUrlName() {
-        return "theme-" + DraculaTheme.ID;
+        return "theme-" + DraculaThemeDescriptor.ID;
     }
 
     /**
@@ -39,7 +39,7 @@ public class DraculaRootAction implements UnprotectedRootAction {
         if (cssFile.startsWith("/")) {
             cssFile = cssFile.substring(1);
         }
-        if (!DraculaTheme.CSS.equals(cssFile)) {
+        if (!AbstractDraculaTheme.CSS.equals(cssFile)) {
             rsp.sendError(404);
             return;
         }

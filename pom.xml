@@ -15,7 +15,7 @@
   <packaging>hpi</packaging>
 
   <name>Dracula Theme Plugin</name>
-  <description>Dark theme for Jenkins based on the Dracula color palette.</description>
+  <description>Dark and light themes for Jenkins based on the Dracula color palette.</description>
   <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
 
   <licenses>
