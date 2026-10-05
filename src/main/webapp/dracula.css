@@ -1,5 +1,53 @@
+/*
+ * Dracula themes, palettes from https://draculatheme.com/spec
+ * The variant blocks set the palette, the last block maps it to the Jenkins design tokens.
+ */
+
+/* Alucard Classic, the light variant. Dracula (System) uses it unless the system is in dark mode. */
+[data-theme=dracula-alucard], .app-theme-picker__picker[data-theme=dracula-alucard],
+[data-theme=dracula-system], .app-theme-picker__picker[data-theme=dracula-system] {
+  --dracula-background: #fffbeb;
+  --dracula-current-line: #6c664b;
+  --dracula-selection: #cfcfde;
+  --dracula-foreground: #1f1f1f;
+  --dracula-comment: #6c664b;
+  --dracula-red: #cb3a2a;
+  --dracula-orange: #a34d14;
+  --dracula-yellow: #846e15;
+  --dracula-green: #14710a;
+  --dracula-cyan: #036a96;
+  --dracula-purple: #644ac9;
+  --dracula-pink: #a3144d;
+
+  /* UI palette from the spec, used for floating surfaces */
+  --dracula-floating: #efeddc;
+
+  /*
+   * Cards and tables use the floating color too. The opaque line highlight
+   * fallback #e2deca leaves secondary text below the 4.5:1 contrast of the spec.
+   */
+  --dracula-surface: var(--dracula-floating);
+
+  /* ANSI palette from the spec */
+  --dracula-ansi-black: #fffbeb;
+  --dracula-ansi-bright-red: #d74c3d;
+  --dracula-ansi-bright-green: #198d0c;
+  --dracula-ansi-bright-yellow: #9e841a;
+  --dracula-ansi-bright-blue: #7862d0;
+  --dracula-ansi-bright-magenta: #bf185a;
+  --dracula-ansi-bright-cyan: #047fb4;
+
+  --white: var(--dracula-background);
+
+  /* Tabs */
+  --tabs-item-background--selected: var(--background);
+
+  /* Render native browser elements in light mode */
+  color-scheme: light;
+}
+
+/* Dracula Classic, the dark variant */
 [data-theme=dracula], .app-theme-picker__picker[data-theme=dracula] {
-  /* Dracula Classic palette, https://draculatheme.com/spec */
   --dracula-background: #282a36;
   --dracula-current-line: #6272a4;
   --dracula-selection: #44475a;
@@ -13,11 +61,11 @@
   --dracula-purple: #bd93f9;
   --dracula-pink: #ff79c6;
 
-  /* Opaque line highlight fallback from the spec */
-  --dracula-line-highlight: #353747;
+  /* Opaque line highlight fallback from the spec, used for cards and tables */
+  --dracula-surface: #353747;
 
-  /* UI palette from the spec, Background Light is used for floating surfaces */
-  --dracula-background-light: #343746;
+  /* UI palette from the spec, used for floating surfaces */
+  --dracula-floating: #343746;
 
   /* ANSI palette from the spec */
   --dracula-ansi-black: #21222c;
@@ -28,10 +76,99 @@
   --dracula-ansi-bright-magenta: #ff92df;
   --dracula-ansi-bright-cyan: #a4ffff;
 
+  --white: var(--dracula-foreground);
+
+  /* Tabs */
+  --tabs-item-background--selected: oklch(
+      from var(--text-color-secondary) l c h / 0.175
+  );
+
+  /* Tooltips */
+  --tooltip-box-shadow:
+      inset 0 0 0 1px oklch(from var(--dracula-foreground) l c h / 0.025),
+      inset var(--jenkins-border--subtle-shadow),
+      0 0 8px 2px oklch(from var(--dracula-ansi-black) l c h / 0.05),
+      0 0 1px 1px oklch(from var(--dracula-ansi-black) l c h / 0.025),
+      0 10px 20px oklch(from var(--dracula-ansi-black) l c h / 0.2);
+
+  /* Dropdowns */
+  --dropdown-box-shadow:
+      inset 0 0 0 1px oklch(from var(--dracula-foreground) l c h / 0.025),
+      inset var(--jenkins-border--subtle-shadow),
+      0 0 8px 2px oklch(from var(--dracula-ansi-black) l c h / 0.05),
+      0 0 1px 1px oklch(from var(--dracula-ansi-black) l c h / 0.025),
+      0 10px 20px oklch(from var(--dracula-ansi-black) l c h / 0.3);
+
+  /* Render native browser elements in dark mode */
+  color-scheme: dark;
+}
+
+/* Dracula (System) in dark mode, a copy of the Dracula Classic block */
+@media (prefers-color-scheme: dark) {
+  [data-theme=dracula-system], .app-theme-picker__picker[data-theme=dracula-system] {
+    --dracula-background: #282a36;
+    --dracula-current-line: #6272a4;
+    --dracula-selection: #44475a;
+    --dracula-foreground: #f8f8f2;
+    --dracula-comment: #6272a4;
+    --dracula-red: #ff5555;
+    --dracula-orange: #ffb86c;
+    --dracula-yellow: #f1fa8c;
+    --dracula-green: #50fa7b;
+    --dracula-cyan: #8be9fd;
+    --dracula-purple: #bd93f9;
+    --dracula-pink: #ff79c6;
+
+    /* Opaque line highlight fallback from the spec, used for cards and tables */
+    --dracula-surface: #353747;
+
+    /* UI palette from the spec, used for floating surfaces */
+    --dracula-floating: #343746;
+
+    /* ANSI palette from the spec */
+    --dracula-ansi-black: #21222c;
+    --dracula-ansi-bright-red: #ff6e6e;
+    --dracula-ansi-bright-green: #69ff94;
+    --dracula-ansi-bright-yellow: #ffffa5;
+    --dracula-ansi-bright-blue: #d6acff;
+    --dracula-ansi-bright-magenta: #ff92df;
+    --dracula-ansi-bright-cyan: #a4ffff;
+
+    --white: var(--dracula-foreground);
+
+    /* Tabs */
+    --tabs-item-background--selected: oklch(
+        from var(--text-color-secondary) l c h / 0.175
+    );
+
+    /* Tooltips */
+    --tooltip-box-shadow:
+        inset 0 0 0 1px oklch(from var(--dracula-foreground) l c h / 0.025),
+        inset var(--jenkins-border--subtle-shadow),
+        0 0 8px 2px oklch(from var(--dracula-ansi-black) l c h / 0.05),
+        0 0 1px 1px oklch(from var(--dracula-ansi-black) l c h / 0.025),
+        0 10px 20px oklch(from var(--dracula-ansi-black) l c h / 0.2);
+
+    /* Dropdowns */
+    --dropdown-box-shadow:
+        inset 0 0 0 1px oklch(from var(--dracula-foreground) l c h / 0.025),
+        inset var(--jenkins-border--subtle-shadow),
+        0 0 8px 2px oklch(from var(--dracula-ansi-black) l c h / 0.05),
+        0 0 1px 1px oklch(from var(--dracula-ansi-black) l c h / 0.025),
+        0 10px 20px oklch(from var(--dracula-ansi-black) l c h / 0.3);
+
+    /* Render native browser elements in dark mode */
+    color-scheme: dark;
+  }
+}
+
+/* Jenkins design tokens, the same for every variant */
+[data-theme=dracula], .app-theme-picker__picker[data-theme=dracula],
+[data-theme=dracula-alucard], .app-theme-picker__picker[data-theme=dracula-alucard],
+[data-theme=dracula-system], .app-theme-picker__picker[data-theme=dracula-system] {
   --background: var(--dracula-background);
   --accent-color: var(--dracula-purple);
   --selection-color: var(--dracula-selection);
-  --white: var(--dracula-foreground);
 
   /* Text */
   --text-color: var(--dracula-foreground);
@@ -42,12 +179,9 @@
 
   /* Tabs - Deprecated */
   --tabs-background: var(--card-border-color);
-  --tabs-item-background--selected: oklch(
-      from var(--text-color-secondary) l c h / 0.175
-  );
 
   /* Table */
-  --table-background: var(--dracula-line-highlight);
+  --table-background: var(--dracula-surface);
 
   /* Side panel */
   --panel-border-color: var(--dracula-selection);
@@ -59,7 +193,7 @@
   --focus-input-glow: oklch(from var(--focus-input-border) l c h / 0.2);
 
   /* Plugin manager */
-  --plugin-manager-bg-color-already-upgraded: var(--dracula-line-highlight);
+  --plugin-manager-bg-color-already-upgraded: var(--dracula-surface);
 
   /* Default button */
   --button-background: oklch(from var(--text-color-secondary) l c h / 0.075);
@@ -81,7 +215,7 @@
   --item-box-shadow--focus: oklch(from var(--accent-color) l c h / 0.25);
 
   /* Card */
-  --card-background: var(--dracula-line-highlight);
+  --card-background: var(--dracula-surface);
   --card-border-color: var(--prefers-contrast, var(--dracula-selection));
 
   @media (prefers-contrast: more) {
@@ -141,25 +275,6 @@
   --light-brown: var(--brown);
   --dark-brown: var(--brown);
 
-  /* Tooltips */
-  --tooltip-box-shadow:
-      inset 0 0 0 1px oklch(from var(--dracula-foreground) l c h / 0.025),
-      inset var(--jenkins-border--subtle-shadow),
-      0 0 8px 2px oklch(from var(--dracula-ansi-black) l c h / 0.05),
-      0 0 1px 1px oklch(from var(--dracula-ansi-black) l c h / 0.025),
-      0 10px 20px oklch(from var(--dracula-ansi-black) l c h / 0.2);
-
   /* Dropdowns, tooltips, dialogs and notifications on Jenkins 2.580 and newer */
-  --overlay-surface-background: var(--dracula-background-light);
-
-  /* Dropdowns */
-  --dropdown-box-shadow:
-      inset 0 0 0 1px oklch(from var(--dracula-foreground) l c h / 0.025),
-      inset var(--jenkins-border--subtle-shadow),
-      0 0 8px 2px oklch(from var(--dracula-ansi-black) l c h / 0.05),
-      0 0 1px 1px oklch(from var(--dracula-ansi-black) l c h / 0.025),
-      0 10px 20px oklch(from var(--dracula-ansi-black) l c h / 0.3);
-
-  /* Render native browser elements in dark mode */
-  color-scheme: dark;
+  --overlay-surface-background: var(--dracula-floating);
 }

@@ -8,13 +8,13 @@ import java.util.List;
 import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;
 
-/** Dracula Classic, the dark theme. */
-public class DraculaTheme extends AbstractDraculaTheme {
+/** Alucard Classic, the light Dracula theme. */
+public class DraculaLightTheme extends AbstractDraculaTheme {
 
-    static final String KEY = "dracula";
+    static final String KEY = "dracula-alucard";
 
     @DataBoundConstructor
-    public DraculaTheme() {
+    public DraculaLightTheme() {
         // Stapler
     }
 
@@ -22,13 +22,13 @@ public class DraculaTheme extends AbstractDraculaTheme {
     public Theme getTheme() {
         return Theme.builder()
                 .withCssUrls(List.of(getVersionedCssUrl()))
-                // Bootstrap 5 pages read this to switch to the dark color mode
-                .withProperty("bootstrap", "theme", "dark")
+                // Bootstrap 5 pages read this to keep the light color mode
+                .withProperty("bootstrap", "theme", "light")
                 .build();
     }
 
     @Extension
-    @Symbol("dracula")
+    @Symbol("draculaAlucard")
     public static class DescriptorImpl extends DraculaThemeDescriptor {
 
         @Override
@@ -38,13 +38,13 @@ public class DraculaTheme extends AbstractDraculaTheme {
 
         @Override
         public ThemeManagerFactory getInstance() {
-            return new DraculaTheme();
+            return new DraculaLightTheme();
         }
 
         @NonNull
         @Override
         public String getDisplayName() {
-            return "Dracula";
+            return "Dracula (Alucard)";
         }
     }
 }

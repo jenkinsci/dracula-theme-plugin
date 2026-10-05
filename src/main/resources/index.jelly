@@ -1,4 +1,4 @@
 <?jelly escape-by-default='true'?>
 <div>
-  Dark theme for Jenkins based on the <a href="https://draculatheme.com">Dracula</a> color palette.
+  Dark and light themes for Jenkins based on the <a href="https://draculatheme.com">Dracula</a> color palette.
 </div>

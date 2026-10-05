@@ -29,22 +29,54 @@ class DraculaThemeJCasCTest {
     @Test
     @ConfiguredWithCode("ConfigurationAsCode.yml")
     void testConfig(JenkinsConfiguredWithCodeRule j) {
-        ThemeManagerPageDecorator decorator = ThemeManagerPageDecorator.get();
+        assertTheme(DraculaTheme.class);
+    }
 
-        ThemeManagerFactory theme = decorator.getTheme();
-        assertNotNull(theme);
-        assertThat(decorator.isDisableUserThemes(), is(true));
-        assertThat(theme, instanceOf(DraculaTheme.class));
+    @Test
+    @ConfiguredWithCode("ConfigurationAsCodeLight.yml")
+    void testConfigLight(JenkinsConfiguredWithCodeRule j) {
+        assertTheme(DraculaLightTheme.class);
+    }
+
+    @Test
+    @ConfiguredWithCode("ConfigurationAsCodeSystem.yml")
+    void testConfigSystem(JenkinsConfiguredWithCodeRule j) {
+        assertTheme(DraculaSystemTheme.class);
     }
 
     @Test
     @ConfiguredWithCode("ConfigurationAsCode.yml")
     void testExport(JenkinsConfiguredWithCodeRule j) throws Exception {
+        assertExport("ConfigurationAsCodeExport.yml");
+    }
+
+    @Test
+    @ConfiguredWithCode("ConfigurationAsCodeLight.yml")
+    void testExportLight(JenkinsConfiguredWithCodeRule j) throws Exception {
+        assertExport("ConfigurationAsCodeExportLight.yml");
+    }
+
+    @Test
+    @ConfiguredWithCode("ConfigurationAsCodeSystem.yml")
+    void testExportSystem(JenkinsConfiguredWithCodeRule j) throws Exception {
+        assertExport("ConfigurationAsCodeExportSystem.yml");
+    }
+
+    private static void assertTheme(Class<? extends ThemeManagerFactory> type) {
+        ThemeManagerPageDecorator decorator = ThemeManagerPageDecorator.get();
+
+        ThemeManagerFactory theme = decorator.getTheme();
+        assertNotNull(theme);
+        assertThat(decorator.isDisableUserThemes(), is(true));
+        assertThat(theme, instanceOf(type));
+    }
+
+    private void assertExport(String expectedFile) throws Exception {
         ConfigurationContext context = new ConfigurationContext(ConfiguratorRegistry.get());
         CNode themeManager = getAppearanceRoot(context).get("themeManager");
 
         String exported = toYamlString(themeManager);
-        String expected = toStringFromYamlFile(this, "ConfigurationAsCodeExport.yml");
+        String expected = toStringFromYamlFile(this, expectedFile);
 
         assertThat(exported, is(expected));
     }
