@@ -3,6 +3,7 @@
 # 🧛🏻‍♂️ Dracula Theme for Jenkins
 
 Dark and light themes for Jenkins, built on the official [Dracula](https://draculatheme.com) color palette.
+Listed among the official Dracula themes at [draculatheme.com/jenkins](https://draculatheme.com/jenkins).
 
 [![Jenkins Plugin](https://img.shields.io/jenkins/plugin/v/dracula-theme?label=version&style=flat-square&color=bd93f9&labelColor=282a36)](https://plugins.jenkins.io/dracula-theme/)
 [![Build](https://ci.jenkins.io/buildStatus/icon?job=Plugins%2Fdracula-theme-plugin%2Fmain&style=flat-square&subject=build)](https://ci.jenkins.io/job/Plugins/job/dracula-theme-plugin/job/main/)
